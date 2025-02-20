@@ -19,57 +19,68 @@
             font-family: "C64 User Mono", monospace;
             color: #fff;
             text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
         .container {
             max-width: 800px;
-            margin: auto;
             padding: 20px;
         }
-        .tabs {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
         }
-        .tab {
+        .dropdown-btn {
             padding: 10px 15px;
-            background: #3b4a72;
-            cursor: pointer;
-            border-radius: 5px;
+            background: #223366;
             color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border: 1px solid #6a94c9;
             transition: background 0.3s;
         }
-        .tab.active {
-            background: #ffcc00;
-            color: #1a2e71;
-            font-weight: bold;
-        }
-        .tab:hover {
+        .dropdown-btn:hover {
             background: #6a94c9;
         }
-        .tab-content {
+        .dropdown-content {
             display: none;
+            position: absolute;
+            background: #3b4a72;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
             text-align: left;
         }
-        .tab-content.active {
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .dropdown-content a:hover {
+            background: #6a94c9;
+        }
+        .dropdown:hover .dropdown-content {
             display: block;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .content {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
         }
-        li {
-            margin: 5px 0;
-        }
-        a {
-            color: #6a94c9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #ffcc00;
+        .content.active {
+            display: block;
         }
     </style>
 </head>
@@ -77,14 +88,35 @@
     <div class="container">
         <h1>Uploads</h1>
         
-        <div class="tabs">
-            <div class="tab active" onclick="showTab('movies')">Movies</div>
-            <div class="tab" onclick="showTab('tv-shows')">TV Shows</div>
-            <div class="tab" onclick="showTab('cartoons')">Cartoons</div>
-            <div class="tab" onclick="showTab('anime')">Anime</div>
+        <div class="dropdown">
+            <div class="dropdown-btn">Movies</div>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('movies')">See Movies</a>
+            </div>
         </div>
-        
-        <div id="movies" class="tab-content active">
+
+        <div class="dropdown">
+            <div class="dropdown-btn">TV Shows</div>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('tv-shows')">See TV Shows</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-btn">Cartoons</div>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('cartoons')">See Cartoons</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-btn">Anime</div>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('anime')">See Anime</a>
+            </div>
+        </div>
+
+        <div id="movies" class="content">
             <h2>Movies</h2>
             <ul>
                 <li><a href="#">Inception (2010) - 1080p</a></li>
@@ -93,7 +125,7 @@
             </ul>
         </div>
         
-        <div id="tv-shows" class="tab-content">
+        <div id="tv-shows" class="content">
             <h2>TV Shows</h2>
             <ul>
                 <li><a href="#">Breaking Bad S01-S05 - 1080p</a></li>
@@ -102,7 +134,7 @@
             </ul>
         </div>
         
-        <div id="cartoons" class="tab-content">
+        <div id="cartoons" class="content">
             <h2>Cartoons</h2>
             <ul>
                 <li><a href="#">Rick and Morty S01-S06 - 1080p</a></li>
@@ -111,7 +143,7 @@
             </ul>
         </div>
         
-        <div id="anime" class="tab-content">
+        <div id="anime" class="content">
             <h2>Anime</h2>
             <ul>
                 <li><a href="#">Attack on Titan S01-S04 - 1080p</a></li>
@@ -122,12 +154,9 @@
     </div>
     
     <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            
-            document.getElementById(tabId).classList.add('active');
-            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        function showContent(contentId) {
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+            document.getElementById(contentId).classList.add('active');
         }
     </script>
 </body>
