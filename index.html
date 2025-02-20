@@ -239,19 +239,20 @@
 		</div>
 
 		<script>
-			document.addEventListener("keypress", function(event) {
-				var code = (event.keyCode ? event.keyCode : event.which);
-				if (code == 84 || code == 116) {
-					window.location = "http://www.telegram.me/cgx265";
-				}
-				if (code == 69 || code == 101) {
-					window.location = "mailto:cgx265@duck.com";
-				}
-				if (code == 65 || code == 97) {
-					window.location = "https://cgx265.gitlab.io/about/";
-				}
-			});
+    			document.addEventListener("keypress", function(event) {
+        			var code = (event.keyCode ? event.keyCode : event.which);
+       				if (code == 84 || code == 116) {  // 'T' or 't'
+            		        	window.location = "http://www.telegram.me/cgx265";
+        			}
+        			if (code == 69 || code == 101) {  // 'E' or 'e'
+            			window.location = "mailto:cgx265@duck.com";
+       				}
+        			if (code == 65 || code == 97) {  // 'A' or 'a'
+            			window.location = "https://cgx265.gitlab.io/about/";
+        			}
+    			});
 		</script>
+
 
 	</body>
 </html> 
