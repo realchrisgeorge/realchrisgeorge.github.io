@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>uploads</title>
+    <title>Uploads</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* FONT SOURCE */
         @font-face {
             font-family: "C64 User Mono";
             src: url("fonts/C64_Pro_Mono-STYLE.eot");
@@ -26,30 +25,26 @@
             margin: auto;
             padding: 20px;
         }
-        h1 {
-            align: center;
-            color: #6a94c9;
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        
-        h2 {
-            align: left;
-            color: #ffcc00;
+        .tab {
+            padding: 10px 15px;
+            background: #6a94c9;
+            cursor: pointer;
+            border-radius: 5px;
         }
-        ul {
-            align: left;
-            list-style: none;
-            padding: 0;
+        .tab.active {
+            background: #ffcc00;
+            color: #1a2e71;
         }
-        li {
-            align: left;
-            margin: 5px 0;
+        .tab-content {
+            display: none;
         }
-        a {
-            color: #6a94c9;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -57,33 +52,58 @@
     <div class="container">
         <h1>Uploads</h1>
         
-        <h2>Movies</h2>
-        <ul>
-            <li><a href="#">Inception (2010) - 1080p</a></li>
-            <li><a href="#">The Matrix (1999) - 4K</a></li>
-            <li><a href="#">Interstellar (2014) - 720p</a></li>
-        </ul>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('movies')">Movies</div>
+            <div class="tab" onclick="showTab('tv-shows')">TV Shows</div>
+            <div class="tab" onclick="showTab('cartoons')">Cartoons</div>
+            <div class="tab" onclick="showTab('anime')">Anime</div>
+        </div>
         
-        <h2>TV Shows</h2>
-        <ul>
-            <li><a href="#">Breaking Bad S01-S05 - 1080p</a></li>
-            <li><a href="#">Stranger Things S01-S04 - 720p</a></li>
-            <li><a href="#">The Boys S01-S03 - 1080p</a></li>
-        </ul>
+        <div id="movies" class="tab-content active">
+            <h2>Movies</h2>
+            <ul>
+                <li><a href="#">Inception (2010) - 1080p</a></li>
+                <li><a href="#">The Matrix (1999) - 4K</a></li>
+                <li><a href="#">Interstellar (2014) - 720p</a></li>
+            </ul>
+        </div>
         
-        <h2>Cartoons</h2>
-        <ul>
-            <li><a href="#">Rick and Morty S01-S06 - 1080p</a></li>
-            <li><a href="#">Avatar: The Last Airbender - 720p</a></li>
-            <li><a href="#">Samurai Jack Complete Series - 1080p</a></li>
-        </ul>
+        <div id="tv-shows" class="tab-content">
+            <h2>TV Shows</h2>
+            <ul>
+                <li><a href="#">Breaking Bad S01-S05 - 1080p</a></li>
+                <li><a href="#">Stranger Things S01-S04 - 720p</a></li>
+                <li><a href="#">The Boys S01-S03 - 1080p</a></li>
+            </ul>
+        </div>
         
-        <h2>Anime</h2>
-        <ul>
-            <li><a href="#">Attack on Titan S01-S04 - 1080p</a></li>
-            <li><a href="#">One Piece (Episodes 1-1000) - 720p</a></li>
-            <li><a href="#">Death Note - 1080p</a></li>
-        </ul>
+        <div id="cartoons" class="tab-content">
+            <h2>Cartoons</h2>
+            <ul>
+                <li><a href="#">Rick and Morty S01-S06 - 1080p</a></li>
+                <li><a href="#">Avatar: The Last Airbender - 720p</a></li>
+                <li><a href="#">Samurai Jack Complete Series - 1080p</a></li>
+            </ul>
+        </div>
+        
+        <div id="anime" class="tab-content">
+            <h2>Anime</h2>
+            <ul>
+                <li><a href="#">Attack on Titan S01-S04 - 1080p</a></li>
+                <li><a href="#">One Piece (Episodes 1-1000) - 720p</a></li>
+                <li><a href="#">Death Note - 1080p</a></li>
+            </ul>
+        </div>
     </div>
+    
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
