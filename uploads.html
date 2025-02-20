@@ -15,10 +15,11 @@
             font-style: normal;
         }
         body {
-            background-color: #1a2e71;
+            background-color: #0a1a4f;
             font-family: "C64 User Mono", monospace;
             color: #fff;
             text-transform: uppercase;
+            text-align: center;
         }
         .container {
             max-width: 800px;
@@ -28,23 +29,47 @@
         .tabs {
             display: flex;
             gap: 10px;
+            justify-content: center;
             margin-bottom: 20px;
         }
         .tab {
             padding: 10px 15px;
-            background: #6a94c9;
+            background: #3b4a72;
             cursor: pointer;
             border-radius: 5px;
+            color: #fff;
+            transition: background 0.3s;
         }
         .tab.active {
             background: #ffcc00;
             color: #1a2e71;
+            font-weight: bold;
+        }
+        .tab:hover {
+            background: #6a94c9;
         }
         .tab-content {
             display: none;
+            text-align: left;
         }
         .tab-content.active {
             display: block;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            color: #6a94c9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
         }
     </style>
 </head>
