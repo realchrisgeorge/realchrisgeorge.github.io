@@ -19,68 +19,36 @@
             font-family: "C64 User Mono", monospace;
             color: #fff;
             text-transform: uppercase;
+            text-align: center;
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
         .container {
             max-width: 800px;
             padding: 20px;
         }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 10px;
-        }
-        .dropdown-btn {
-            padding: 10px 15px;
-            background: #223366;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            border: 1px solid #6a94c9;
-            transition: background 0.3s;
-        }
-        .dropdown-btn:hover {
-            background: #6a94c9;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #3b4a72;
-            min-width: 160px;
-            z-index: 1;
-            border-radius: 5px;
+        .tab-content {
             text-align: left;
         }
-        .dropdown-content a {
-            color: #fff;
-            padding: 10px;
-            display: block;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            color: #6a94c9;
             text-decoration: none;
-            font-size: 12px;
+            font-weight: bold;
         }
-        .dropdown-content a:hover {
-            background: #6a94c9;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .content {
-            display: none;
-            text-align: left;
-            padding: 10px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            margin-top: 20px;
-        }
-        .content.active {
-            display: block;
+        a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
         }
     </style>
 </head>
@@ -88,35 +56,7 @@
     <div class="container">
         <h1>Uploads</h1>
         
-        <div class="dropdown">
-            <div class="dropdown-btn">Movies</div>
-            <div class="dropdown-content">
-                <a href="#" onclick="showContent('movies')">See Movies</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <div class="dropdown-btn">TV Shows</div>
-            <div class="dropdown-content">
-                <a href="#" onclick="showContent('tv-shows')">See TV Shows</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <div class="dropdown-btn">Cartoons</div>
-            <div class="dropdown-content">
-                <a href="#" onclick="showContent('cartoons')">See Cartoons</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <div class="dropdown-btn">Anime</div>
-            <div class="dropdown-content">
-                <a href="#" onclick="showContent('anime')">See Anime</a>
-            </div>
-        </div>
-
-        <div id="movies" class="content">
+        <div class="tab-content">
             <h2>Movies</h2>
             <ul>
                 <li><a href="#">Inception (2010) - 1080p</a></li>
@@ -125,7 +65,7 @@
             </ul>
         </div>
         
-        <div id="tv-shows" class="content">
+        <div class="tab-content">
             <h2>TV Shows</h2>
             <ul>
                 <li><a href="#">Breaking Bad S01-S05 - 1080p</a></li>
@@ -134,7 +74,7 @@
             </ul>
         </div>
         
-        <div id="cartoons" class="content">
+        <div class="tab-content">
             <h2>Cartoons</h2>
             <ul>
                 <li><a href="#">Rick and Morty S01-S06 - 1080p</a></li>
@@ -143,7 +83,7 @@
             </ul>
         </div>
         
-        <div id="anime" class="content">
+        <div class="tab-content">
             <h2>Anime</h2>
             <ul>
                 <li><a href="#">Attack on Titan S01-S04 - 1080p</a></li>
@@ -152,12 +92,5 @@
             </ul>
         </div>
     </div>
-    
-    <script>
-        function showContent(contentId) {
-            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
-            document.getElementById(contentId).classList.add('active');
-        }
-    </script>
 </body>
 </html>
