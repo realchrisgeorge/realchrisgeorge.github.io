@@ -35,25 +35,21 @@
             text-align: left;
         }
         ul {
-            list-style-type: none;
-            padding: 0;
+            list-style-type: disc; /* Adds bullet points */
+            padding-left: 20px;
             display: none;
         }
         li {
             margin: 5px 0;
         }
-        a {
-            color: #6a94c9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #ffcc00;
-        }
         h2 {
             cursor: pointer;
             color: #ffcc00;
+        }
+        .counter {
+            font-size: 14px;
+            color: #6a94c9;
+            margin-left: 10px;
         }
     </style>
     <script>
@@ -61,6 +57,18 @@
             const ul = event.nextElementSibling;
             ul.style.display = ul.style.display === 'none' || ul.style.display === '' ? 'block' : 'none';
         }
+
+        // Function to add count numbers dynamically
+        function updateCounters() {
+            document.querySelectorAll(".tab-content").forEach(tab => {
+                const ul = tab.querySelector("ul");
+                const count = ul ? ul.children.length : 0;
+                const h2 = tab.querySelector("h2");
+                h2.innerHTML = `${h2.innerText.split(" (")[0]} <span class="counter">(${count})</span>`;
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCounters);
     </script>
 </head>
 <body>
@@ -70,36 +78,36 @@
         <div class="tab-content">
             <h2 onclick="toggleList(this)">Movies</h2>
             <ul>
-                <li><a href="#">Inception (2010) - 1080p</a></li>
-                <li><a href="#">The Matrix (1999) - 4K</a></li>
-                <li><a href="#">Interstellar (2014) - 720p</a></li>
+                <li>Inception (2010) - 1080p</li>
+                <li>The Matrix (1999) - 4K</li>
+                <li>Interstellar (2014) - 720p</li>
             </ul>
         </div>
         
         <div class="tab-content">
             <h2 onclick="toggleList(this)">TV Shows</h2>
             <ul>
-                <li><a href="#">Breaking Bad S01-S05 - 1080p</a></li>
-                <li><a href="#">Stranger Things S01-S04 - 720p</a></li>
-                <li><a href="#">The Boys S01-S03 - 1080p</a></li>
+                <li>Breaking Bad S01-S05 - 1080p</li>
+                <li>Stranger Things S01-S04 - 720p</li>
+                <li>The Boys S01-S03 - 1080p</li>
             </ul>
         </div>
         
         <div class="tab-content">
             <h2 onclick="toggleList(this)">Cartoons</h2>
             <ul>
-                <li><a href="#">Rick and Morty S01-S06 - 1080p</a></li>
-                <li><a href="#">Avatar: The Last Airbender - 720p</a></li>
-                <li><a href="#">Samurai Jack Complete Series - 1080p</a></li>
+                <li>Rick and Morty S01-S06 - 1080p</li>
+                <li>Avatar: The Last Airbender - 720p</li>
+                <li>Samurai Jack Complete Series - 1080p</li>
             </ul>
         </div>
         
         <div class="tab-content">
             <h2 onclick="toggleList(this)">Anime</h2>
             <ul>
-                <li><a href="#">Attack on Titan S01-S04 - 1080p</a></li>
-                <li><a href="#">One Piece (Episodes 1-1000) - 720p</a></li>
-                <li><a href="#">Death Note - 1080p</a></li>
+                <li>Attack on Titan S01-S04 - 1080p</li>
+                <li>One Piece (Episodes 1-1000) - 720p</li>
+                <li>Death Note - 1080p</li>
             </ul>
         </div>
     </div>
