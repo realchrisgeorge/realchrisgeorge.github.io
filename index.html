@@ -1,130 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>cgx265</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @font-face {
-            font-family: "C64 User Mono";
-            src: url("fonts/C64_Pro_Mono-STYLE.woff") format("woff"),
-                 url("fonts/C64_Pro_Mono-STYLE.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
+	<head>
+		<title>cgpirates</title>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css" media="print">
+			blockquote {
+				font-style: italic;
+			}
+			cite {
+				font-style: normal;
+				display: inline;
+			}
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			li:nth-child(1):after {
+				content: " — https://www.telegram.me/cgx265/";
+			}
+			li:nth-child(2):after {
+				content: " — cgx265@duck.com";
+			}
+			li:nth-child(3):after {
+				content: " — https://cgx265.gitlab.io/about/";
+			}
+		</style>
+		<style type="text/css" media="screen">
+			/* FONT SOURCE */
+			@font-face {
+			    font-family: "C64 User Mono";
+				src: url("fonts/C64_Pro_Mono-STYLE.eot");
+				src: url("fonts/C64_Pro_Mono-STYLE.eot?#iefix") format("embedded-opentype"),
+				url("fonts/C64_Pro_Mono-STYLE.woff") format("woff"),
+				url("fonts/C64_Pro_Mono-STYLE.ttf") format("truetype");
+				font-weight: normal;
+				font-style: normal;
+			}
+			/* KEYFRAME ANIMATIONS DEFINITION */
+			@-webkit-keyframes show {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			@keyframes show {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			@-webkit-keyframes blink {
+				0% { opacity: 1; }
+				50% { opacity: 0; }
+				100% { opacity: 1; }
+			}
+			@keyframes blink {
+				0% { opacity: 1; }
+				50% { opacity: 0; }
+				100% { opacity: 1; }
+			}
+			/* RESPONSIVE INDEPENDENT STYLING */
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			html, body {
+				height: 100%;
+				width: 100%;
+			}
+			body {
+				background-color: #6076c5;
+				-webkit-text-size-adjust: none;
+			}
+			div {
+				background-color: #20398d;
+				box-sizing: border-box;
+				border-style: solid;
+				border-color: #6076c5;
+			}
+			header, h1, h2, blockquote, ul, li, footer {
+				font-family: "C64 User Mono", monospace;
+				line-height: 1.2;
+				font-weight: normal;
+				color: #6076c5;
+				text-transform: uppercase;
+			}
+			header:before, header:after, h1:after, footer:before, footer:after {
+				white-space: pre;
+				display: block;
+			}
+			header:before {
+				text-align: center;
+			}
+			header:after {
+				content: "\A Ready. \A\A\A";
+			}
+			h1:after {
+				content: "-------------";
+			}
+			h2 {
+				margin-top: 1.2rem;
+			}
+			blockquote {
+				margin: 1.2rem 0;
+			}
+			cite {
+				font-style: normal;
+			}
+			cite:before {
+				content: "-";
+			}
+			span {
+				display: none;
+			}
+			ul {
+				list-style: none;
+			}
+			li:nth-child(1):before {
+				content: "[T]:";
+			}
+			li:nth-child(2):before {
+				content: "[E]:";
+			}
+			li:nth-child(3):before {
+				content: "[A]:";
+			}
+			a {
+				color: #6076c5;
+				text-decoration: none;
+			}
+			a:hover {
+				color: #ddd;
+			}
+			footer {
+				opacity:0;
+				-webkit-animation: show 1.5s step-end 1 forwards;
+				animation: show 1.5s step-end 1 forwards;
+			}
+			footer:before {
+				content: "\A\A ?Syntax Error \A Ready. \A";
+			}
+			footer:after {
+				-webkit-animation: blink 1s step-end infinite;
+				animation: blink 1s step-end infinite;
+				content: "\2588";
+			}
+			::selection {
+				background: none;
+				color: transparent;
+				text-shadow: none;
+			}
+			::-moz-selection {
+				background: #6076c5;
+				color: #20398d;
+				text-shadow: none;
+			}
+			/* RESPONSIVE DEFAULT STYLING */
+			div {
+				border-width: 0.5rem;
+				min-height: 100%;
+			}
+			header, h1, h2, blockquote, li, footer {
+				font-size: 0.7rem;
+			}
+			header:before {
+				content: "\A Commodore 64 Basic v2 \A 64K RAM system \A 38911 Basic bytes free \A";
+			}
+			cite {
+				display: block;
+				white-space: normal;
+			}
+			footer:after {
+				font-size: 1rem;
+			}
+			/* RESPONSIVE DEPENDENT STYLING */
+			@media screen and (min-width: 23.33rem) {
+				div {
+					border-width: 0.75rem;
+				}
+				header, h1, h2, blockquote, li, footer {
+					font-size: 0.75rem;
+				}
+				cite {
+					display: inline;
+					white-space: nowrap;
+				}
+				footer:after {
+					font-size: 1.1rem;
+				}
+			}
+			@media screen and (min-width: 32.5rem) {
+				div {
+					border-width: 2rem;
+				}
+				header:before {
+					content: "\A **** Free The Internet **** \A\A  64K RAM system  38911  Commodore 64 Basic v2 \A";
+				}
+			}
+			@media screen and (min-width: 45.5rem) {
+				header, h1, h2, blockquote, li, footer {
+					font-size: 1rem;
+				}
+				footer:after {
+					font-size: 1.5rem;
+				}
+			}
+			@media screen and (min-width: 53.5rem) {
+				div {
+					margin: 0 auto;
+					border-width: 5rem;
+					max-width: 74rem;
+				}
+			}
+			@media screen and (min-width: 74rem) and (min-height: 48rem) {
+				div {
+					position: absolute;
+					min-height: 48rem;
+					top: 50%;
+					left: 50%;
+					margin-left: -37rem;
+					margin-top: -24rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<header></header>
+			<h1>cgpirates</h1>
+			<h2>Privacy &amp; Piracy</h2>
+			<blockquote>
+				&ldquo;I have found that all ugly things are made by those who strive to make something beautiful, and that all beautiful things are made by those who strive to make something useful.&rdquo; <cite class="author"><span>&mdash;</span>Oscar Wilde</cite>
+			</blockquote>
+			<ul>
+				<li><a href="https://telegram.me/+fcfiKKNhp-Y0YjFl" accesskey="t">Telegram</a></li>
+                		<li><a href="mailto:cgx265@duck.com" accesskey="e">e-mail</a></li>
+				<li><a href="https://cgx265.gitlab.io/about/" accesskey="a">about</a></li>
+			</ul>
+			<footer></footer>
+		</div>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+		<script>
+    			document.addEventListener("keypress", function(event) {
+        			var code = (event.keyCode ? event.keyCode : event.which);
+       				if (code == 84 || code == 116) {  // 'T' or 't'
+            		        	window.location = "http://www.telegram.me/cgx265";
+        			}
+        			if (code == 69 || code == 101) {  // 'E' or 'e'
+            			window.location = "mailto:cgx265@duck.com";
+       				}
+        			if (code == 65 || code == 97) {  // 'A' or 'a'
+            			window.location = "https://cgx265.gitlab.io/about/";
+        			}
+    			});
+		</script>
 
-        body {
-            background-color: #6076c5;
-            color: #6076c5;
-            font-family: "C64 User Mono", monospace;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-transform: uppercase;
-            padding: 1rem;
-        }
 
-        .container {
-            background-color: #20398d;
-            padding: 2rem;
-            border: 0.5rem solid #6076c5;
-            max-width: 90vw;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-        }
-
-        blockquote {
-            font-style: italic;
-            font-size: 1rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        li a {
-            color: #6076c5;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        li a:hover {
-            color: #ddd;
-        }
-
-        footer {
-            font-size: 0.8rem;
-        }
-
-        @media (min-width: 600px) {
-            .container {
-                padding: 3rem;
-                border-width: 1rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            blockquote {
-                font-size: 1.2rem;
-            }
-            li a {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>cgx265</h1>
-            <h2>Privacy &amp; Piracy</h2>
-        </header>
-        <blockquote>
-            &ldquo;I have found that all ugly things are made by those who strive to make something beautiful, and that all beautiful things are made by those who strive to make something useful.&rdquo;
-            <cite> - Oscar Wilde</cite>
-        </blockquote>
-        <ul>
-            <li><a href="https://telegram.me/+fcfiKKNhp-Y0YjFl">Telegram</a></li>
-            <li><a href="mailto:cgx265@duck.com">E-mail</a></li>
-            <li><a href="https://cgx265.gitlab.io/about/">About</a></li>
-        </ul>
-        <footer>
-            ?Syntax Error<br>Ready.
-        </footer>
-    </div>
-    <script>
-        document.addEventListener("keypress", function(event) {
-            let code = event.keyCode || event.which;
-            if (code === 84 || code === 116) window.location = "https://www.telegram.me/cgx265";
-            if (code === 69 || code === 101) window.location = "mailto:cgx265@duck.com";
-            if (code === 65 || code === 97) window.location = "https://cgx265.gitlab.io/about/";
-        });
-    </script>
-</body>
-</html>
+	</body>
+</html> 
