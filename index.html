@@ -143,43 +143,27 @@ li:nth-child(5)::after {
             color: #ddd;
         }
 	    
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: left;  /* Align text properly */
-    font-size: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between text and GIF */
+	footer img {
+	    margin-top: 20px;
+            align: bottom:
+            display: block;
+            margin: 0 auto;
+            max-width: 100px; /* Adjust size as needed */
+        }
     
-    opacity: 0;
-    -webkit-animation: show 1.5s step-end 1 forwards;
-    animation: show 1.5s step-end 1 forwards;
-}
-
-footer:before {
-    content: "?SYNTAX ERROR\A READY.\A";
-    white-space: pre; /* Keeps line breaks */
-}
-
-footer:after {
-    content: "\2588"; /* Blinking block cursor */
-    -webkit-animation: blink 1s step-end infinite;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-footer img {
-    width: 100px; /* Adjust the size of the Notepad GIF */
-    image-rendering: pixelated; /* Keep pixel art sharp */
-}
-
+        footer {
+            opacity:0;
+            -webkit-animation: show 1.5s step-end 1 forwards;
+            animation: show 1.5s step-end 1 forwards;
+        }
+        footer:before {
+            content: "\A\A ?Syntax Error \A Ready. \A";
+        }
+        footer:after {
+            -webkit-animation: blink 1s step-end infinite;
+            animation: blink 1s step-end infinite;
+            content: "\2588";
+        }
         ::selection {
             background: none;
             color: transparent;
