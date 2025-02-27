@@ -142,7 +142,16 @@ li:nth-child(5)::after {
         a:hover {
             color: #ddd;
         }
+	    
+	footer img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100px; /* Adjust size as needed */
+        }
+    
         footer {
+	    text-align: center;
+            padding: 20px;
             opacity:0;
             -webkit-animation: show 1.5s step-end 1 forwards;
             animation: show 1.5s step-end 1 forwards;
@@ -249,7 +258,9 @@ li:nth-child(5)::after {
 			<li><a href="https://open.spotify.com/user/34528xb88ljh4lxma7uugm1pj?si=5ccfc01e05404ed8" accesskey="s">Spotify</a></li>
 			<li><a href="mailto:chrisgeorge@tutamail.com" accesskey="e">E-mail</a></li>
         </ul>
-        <footer></footer>
+        <footer>
+		<img src="notepad.gif" alt="Animated GIF" width="150">
+	</footer>
     </div>
 
     <script>
