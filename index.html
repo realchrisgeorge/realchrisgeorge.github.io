@@ -45,15 +45,18 @@ li:nth-child(1)::after {
     content: " — https://realchrisgeorge.githab.io/clickme";
 }
 li:nth-child(2)::after {
-    content: " — https://realchrisgeorge.github.io/media-archive/";
+    content: " — https://realchrisgeorge.github.io/offsocial/";
 }
 li:nth-child(3)::after {
-    content: " — https://realchrisgeorge.github.io/pgp";
+    content: " — https://realchrisgeorge.github.io/media-archive/";
 }
 li:nth-child(4)::after {
-    content: " — https://realchrisgeorge.github.io/spotify/";
+    content: " — https://realchrisgeorge.github.io/pgp";
 }
 li:nth-child(5)::after {
+    content: " — https://realchrisgeorge.github.io/spotify/";
+}
+li:nth-child(6)::after {
     content: " — https://realchrisgeorge.github.io/email";
 }
 
@@ -150,12 +153,15 @@ li:nth-child(5)::after {
             content: "[C]:";
         }
         li:nth-child(2):before {
-            content: "[M]:";
+            content: "[O]:";
         }
         li:nth-child(3):before {
-            content: "[P]:";
+            content: "[M]:";
         }
 	li:nth-child(4):before {
+            content: "[P]:";
+        }
+	li:nth-child(5):before {
             content: "[S]:";
         }
 	li:nth-child(5):before {
@@ -279,6 +285,7 @@ li:nth-child(5)::after {
         </blockquote>
         <ul>
             <li><a href="https://realchrisgeorge.github.io/clickme" accesskey="c">CLICK ME</a></li>
+	    <li><a href="https://realchrisgeorge.github.io/offsocial/" accesskey="o">OFF//SOCIAL</a></li>
             <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MEDIA ARCHIVE</a></li>
             <li><a href="https://realchrisgeorge.github.io/pgp" accesskey="p">PGP</a></li>
 	    <li><a href="https://realchrisgeorge.github.io/spotify/" accesskey="s">SPOTIFY</a></li>
@@ -294,6 +301,9 @@ li:nth-child(5)::after {
             var code = (event.keyCode ? event.keyCode : event.which);
             if (code == 67) {  // 'C' or 'c'
                 window.location = "https://realchrisgeorge.github.io/clickme";
+            }
+	    if (code == 79 || code == 111) {  // 'O' or 'o'
+		window.location = "https://realchrisgeorge.github.io/offsocial/";
             }
             if (code == 77 || code == 109) {  // 'M' or 'm'
 		window.location = "https://realchrisgeorge.github.io/media-archive/";
