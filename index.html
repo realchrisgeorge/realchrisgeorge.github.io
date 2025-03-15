@@ -54,10 +54,10 @@ li:nth-child(4)::after {
     content: " — https://realchrisgeorge.github.io/pgp";
 }
 li:nth-child(5)::after {
-    content: " — https://realchrisgeorge.github.io/spotify/";
+    content: " — mailto:realchrisgeorge@tutanota.com";
 }
 li:nth-child(6)::after {
-    content: " — https://realchrisgeorge.github.io/email";
+    content: " — https://realchrisgeorge.github.io/spotify";
 }
 
     </style>
@@ -162,10 +162,10 @@ li:nth-child(6)::after {
             content: "[P]:";
         }
 	li:nth-child(5):before {
-            content: "[S]:";
+            content: "[E]:";
         }
 	li:nth-child(6):before {
-            content: "[E]:";
+            content: "[S]:";
         }
         a {
             color: #6a94c9;
@@ -288,8 +288,9 @@ li:nth-child(6)::after {
 	    <li><a href="https://realchrisgeorge.github.io/offsocial/" accesskey="o">OFF-SOCIAL</a></li>
             <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MEDIA ARCHIVE</a></li>
             <li><a href="https://realchrisgeorge.github.io/pgp" accesskey="p">PGP</a></li>
-	    <li><a href="https://realchrisgeorge.github.io/spotify/" accesskey="s">SPOTIFY</a></li>
 	    <li><a href="mailto:realchrisgeorge@tutanota.com" accesskey="e">E-MAIL</a></li>
+	    <li><a href="https://realchrisgeorge.github.io/spotify/" accesskey="s">SPOTIFY</a></li>
+	    
         </ul>
         <footer>
 		<img src="notepad.gif" alt="Animated GIF" width="150">
@@ -311,11 +312,11 @@ li:nth-child(6)::after {
             if (code == 80) {  // 'P' or 'p'
                 window.location = "https://realchrisgeorge.github.io/pgp";
             }
-	    if (code == 83) {  // 'S' or 's'
-                window.location = "https://realchrisgeorge.github.io/spotify/";
+	     if (code == 69 || code == 101) {  // 'E' or 'e'
+                window.location = "mailto:realchrisgeorge@tutanota.com";
 	    }
-	    if (code == 69 || code == 101) {  // 'E' or 'e'
-                window.location = "mailto:chrisgeorge@tutamail.com";
+	     if (code == 83) {  // 'S' or 's'
+                window.location = "https://realchrisgeorge.github.io/spotify/";
 	    }
         });
     </script>
