@@ -59,6 +59,9 @@ li:nth-child(5)::after {
 li:nth-child(6)::after {
     content: " — https://realchrisgeorge.github.io/spotify";
 }
+li:nth-child(7)::after {
+    content: " — https://telegram.me/thet0rrentbot";
+}
 
     </style>
     <style type="text/css" media="screen">
@@ -166,6 +169,9 @@ li:nth-child(6)::after {
         }
 	li:nth-child(6):before {
             content: "[S]:";
+        }
+	li:nth-child(7):before {
+            content: "[T]:";
         }
         a {
             color: #6a94c9;
@@ -284,12 +290,13 @@ li:nth-child(6)::after {
             &ldquo;I have found that all ugly things are made by those who strive to make something beautiful, and that all beautiful things are made by those who strive to make something useful.&rdquo;
         </blockquote>
         <ul>
-            <li><a href="https://realchrisgeorge.github.io/clickme" accesskey="c">CLICK ME</a></li>
+        <li><a href="https://realchrisgeorge.github.io/clickme" accesskey="c">CLICK ME</a></li>
 	    <li><a href="https://realchrisgeorge.github.io/offsocial/" accesskey="o">OFF-SOCIAL</a></li>
-            <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MEDIA ARCHIVE</a></li>
-            <li><a href="https://realchrisgeorge.github.io/pgp" accesskey="p">PGP</a></li>
+        <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MEDIA ARCHIVE</a></li>
+        <li><a href="https://realchrisgeorge.github.io/pgp" accesskey="p">PGP</a></li>
 	    <li><a href="mailto:r34lcg@gmail.com" accesskey="e">E-MAIL</a></li>
 	    <li><a href="https://realchrisgeorge.github.io/spotify/" accesskey="s">SPOTIFY</a></li>
+		<li><a href="https://telegram.me/thet0rrentbot/" accesskey="t">TELEGRAM</a></li>
 	    
         </ul>
         <footer>
@@ -304,20 +311,23 @@ li:nth-child(6)::after {
                 window.location = "https://realchrisgeorge.github.io/clickme";
             }
 	    if (code == 79 || code == 111) {  // 'O' or 'o'
-		window.location = "https://realchrisgeorge.github.io/offsocial/";
+				window.location = "https://realchrisgeorge.github.io/offsocial/";
             }
-            if (code == 77 || code == 109) {  // 'M' or 'm'
-		window.location = "https://realchrisgeorge.github.io/media-archive/";
+        if (code == 77 || code == 109) {  // 'M' or 'm'
+				window.location = "https://realchrisgeorge.github.io/media-archive/";
             }
-            if (code == 80) {  // 'P' or 'p'
-                window.location = "realchrisgeorge.github.io/pgp";
+        if (code == 80) {  // 'P' or 'p'
+                window.location = "https://realchrisgeorge.github.io/pgp";
             }
 	     if (code == 69 || code == 101) {  // 'E' or 'e'
                 window.location = "mailto:r34lcg@gmail.com";
-	    }
+	    	}
 	     if (code == 83) {  // 'S' or 's'
-                window.location = "realchrisgeorge.github.io/spotify/";
-	    }
+                window.location = "https://realchrisgeorge.github.io/spotify/";
+	    	}
+		 if (code == 84) {  // 'T' or 't'
+    			window.location = "https://telegram.me/thet0rrentbot"; 
+			}
         });
     </script>
 </body>
