@@ -31,18 +31,21 @@ li:nth-child(2)::after {
     content: " — https://realchrisgeorge.github.io/offsocial/";
 }
 li:nth-child(3)::after {
-    content: " — https://realchrisgeorge.github.io/media-archive/";
+    content: " — https://realchrisgeorge.github.io/music-archive/";
 }
 li:nth-child(4)::after {
-    content: " — https://realchrisgeorge.github.io/pgp";
+    content: " — https://realchrisgeorge.github.io/film-archive/";
 }
 li:nth-child(5)::after {
-    content: " — mailto:r34lcg@gmail.com";
+    content: " — https://realchrisgeorge.github.io/pgp";
 }
 li:nth-child(6)::after {
-    content: " — https://realchrisgeorge.github.io/spotify";
+    content: " — mailto:r34lcg@gmail.com";
 }
 li:nth-child(7)::after {
+    content: " — https://realchrisgeorge.github.io/spotify";
+}
+li:nth-child(8)::after {
     content: " — https://telegram.me/thet0rrentbot";
 }
 
@@ -275,7 +278,8 @@ li:nth-child(7)::after {
         <ul>
         <li><a href="https://realchrisgeorge.github.io/clickme" accesskey="c">CLICK ME</a></li>
 	    <li><a href="https://realchrisgeorge.github.io/offsocial/" accesskey="o">OFF-SOCIAL</a></li>
-        <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MEDIA ARCHIVE</a></li>
+        <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="m">MUSIC-ARCHIVE</a></li>
+        <li><a href="https://realchrisgeorge.github.io/media-archive/" accesskey="f">FILM-ARCHIVE</a></li>
         <li><a href="https://realchrisgeorge.github.io/pgp" accesskey="p">PGP</a></li>
 	    <li><a href="mailto:r34lcg@gmail.com" accesskey="e">E-MAIL</a></li>
 	    <li><a href="https://realchrisgeorge.github.io/spotify/" accesskey="s">SPOTIFY</a></li>
@@ -290,26 +294,29 @@ li:nth-child(7)::after {
     <script>
         document.addEventListener("keyup", function(event) {
             var code = (event.keyCode ? event.keyCode : event.which);
-            if (code == 67) {  // 'C' or 'c'
+        if (code == 67) {  // 'C' or 'c'
                 window.location = "https://realchrisgeorge.github.io/clickme";
             }
 	    if (code == 79 || code == 111) {  // 'O' or 'o'
 				window.location = "https://realchrisgeorge.github.io/offsocial/";
             }
         if (code == 77 || code == 109) {  // 'M' or 'm'
-				window.location = "https://realchrisgeorge.github.io/media-archive/";
+				window.location = "https://realchrisgeorge.github.io/music-archive/";
             }
         if (code == 80) {  // 'P' or 'p'
                 window.location = "https://realchrisgeorge.github.io/pgp";
             }
-	     if (code == 69 || code == 101) {  // 'E' or 'e'
+	    if (code == 69 || code == 101) {  // 'E' or 'e'
                 window.location = "mailto:r34lcg@gmail.com";
 	    	}
-	     if (code == 83) {  // 'S' or 's'
+	    if (code == 83) {  // 'S' or 's'
                 window.location = "https://realchrisgeorge.github.io/spotify/";
 	    	}
-		 if (code == 84) {  // 'T' or 't'
+		if (code == 84) {  // 'T' or 't'
     			window.location = "https://telegram.me/thet0rrentbot"; 
+			}
+		if (code == 70) {  // 'F' or 'f'
+   				window.location = "https://realchrisgeorge.github.io/fgp";
 			}
         });
     </script>
